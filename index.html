@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:wght@200;300;400;500;600&display=swap');
+
+body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 2.5;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background: #252525;
+    }
+    .container {
+        flex: 1;
+        max-width: 1200px;
+        width: 100%;
+        background: #cac3c3;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin: 20px auto;
+    }
+
+    header {
+        background: #333;
+        color: #fff;
+        padding: 10px 0;
+    }
+
+    header nav ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    header nav ul li {
+        margin: 0 20px;
+    }
+
+    header nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: larger;
+    }
+
+    header nav ul li a:hover {
+        text-decoration: underline;
+    }
+
+    section {
+        padding: 20px;
+        margin: 20px 0;
+    }
+
+    #home {
+        background: #5e4706;
+        text-align: left;
+        padding: 10px 10px;
+    }
+
+    #home .home-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #home .home-text {
+        flex: 1;
+        padding: 20px;
+        color: whitesmoke;
+        text-align: center;
+    }
+
+    #home .home-text h1,
+    #home .home-text h3,
+    #home .home-text p {
+        margin-bottom: 30px;
+    }
+
+    #home .home-image {
+        flex: 0 0 auto;
+        padding: 1px;
+    }
+
+    #home .home-image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 300px;
+        box-shadow: 0 0 40px rgba(240, 226, 226, 0.568);
+    }
+
+    .icon ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .icon ul li {
+        display: flex;
+        align-items: center;
+        color: black;
+        font-size: 3.3em;
+    }
+
+    .icon ul li a {
+        margin-left: 10px;
+        color: black;
+        text-decoration: none;
+        transition: transform 0.3s;
+    }
+
+    .icon ul li a:hover {
+        text-decoration: underline;
+        transform: scale(1.05);
+    }
+
+    .about-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .about-image {
+        flex: 0 0 auto;
+        padding: 10px;
+    }
+
+    .about-image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 100px;
+        box-shadow: 0 0 10px rgba(153, 114, 6, 0.589);
+    }
+
+    .about-text {
+        flex: 1;
+        padding: 10px;
+        font-size: 20px;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    #works .works-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #works .work {
+        margin: 20px;
+        text-align: center;
+    }
+
+    #works .work img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 0 30px rgba(153, 114, 6, 0.589);
+        transition: transform 0.3s;
+    }
+
+    #works .work img:hover {
+        transform: scale(1.05);
+    }
+
+    #contact-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #contact-form label {
+        margin: 10px 0 5px;
+    }
+
+    #contact-form input,
+    #contact-form textarea {
+        padding: 10px;
+        font-size: 1em;
+        width: 100%;
+        max-width: 500px;
+    }
+
+    #contact-form button {
+        padding: 10px;
+        background: #333;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    #contact-form button:hover {
+        background: #555;
+    }
+
+    footer {
+        background: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+    }
+
+    @media (min-width: 768px) {
+        .icon ul li a {
+            margin-left: 150px;
+        }
+
+        #home .home-content {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .about-content {
+            flex-direction: row;
+        }
+
+        .about-text {
+            margin-top: 0;
+            margin-left: 40px;
+            text-align: left;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#works">Works</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section id="home">
+            <div class="home-content">
+                <div class="home-text">
+                    <h1 style="font-size: 55px; font-family: Arial, Helvetica, sans-serif;">I'm Erica,</h1>
+                    <h3 style="font-size: 40px; font-family: Georgia, 'Times New Roman', Times, serif;">a Web Developer</h3>
+                    <p style="font-size: larger;">Crafting seamless web solutions that align with business objectives <br> and user needs. Bridging the gap between vision and reality <br> through intuitive design and innovative development.</p> 
+                </div>
+                <div class="home-image">
+                    <img src="photo.png" alt="Erica May Bautista">
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <div class="icon">
+                <ul>
+                    <li>
+                        <a href="mailto:ericamaybautista08@gmail.com" target="_blank">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/ercmy" target="_blank">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/eka.myye?igsh=MWJ5Y2w5dGwzNTA1eQ==" target="_blank">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/ericamay.bautista.0510" target="_blank">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2 style="display: flex; justify-content: center; font-size: 50px; font-family: Verdana, Geneva, Tahoma, sans-serif;">About Me</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="photo_again.png" alt="Erica May Bautista">
+                </div>
+                <div class="about-text">
+                    <p>I’m Erica May M. Bautista, a student at Dalubhasaan ng Lungsod ng Lucena  taking <br> Bachelor of Science in Information Technology, currently in my second  year. <br> <br>   My programming journey has not been easy. I am unfamiliar with IT stuff because  my <br> senior high school strand is not the same as my current course.  But because  our <br> professor is good at teaching, I learned a lot. I want to share  with you  what I <br> learned when it comes to web development. Keep coding guys!</p>
+                    <h4>SKILLS: <br> •Communication <br> •Interpersonal <br> •Design <br> •System Analysis <br> •Computer Programming</h4>
+                    
+                </div>
+            </div>
+        </section>
+        <section id="works">
+            <h2 style="display: flex; justify-content: center; font-size: 50px; font-family: Verdana, Geneva, Tahoma, sans-serif;">Works</h2>
+            <div class="works-content">
+                <div class="work">
+                    <a href="https://github.com/ercmy/patient-record-system" target="_blank">
+                        <img src="patient-record-system.png" alt="Project 1">
+                    </a>
+                    <p style="font-size: 30px; font-family: Verdana, Geneva, Tahoma, sans-serif;">Patient Record System</p>
+                </div>
+                <div class="work">
+                    <a href="https://github.com/ercmy/kdrama-system" target="_blank">
+                        <img src="kdrama-system.png" alt="Project 2">
+                    </a>
+                    <p style="font-size: 30px; font-family: Verdana, Geneva, Tahoma, sans-serif;">Korean Drama System</p>
+                </div>
+                <div class="work">
+                    <a href="https://ercmy.github.io/online-resume/" target="_blank">
+                        <img src="resume.png" alt="Project 3">
+                    </a>
+                    <p style="font-size: 30px; font-family: Verdana, Geneva, Tahoma, sans-serif;">Online Resume</p>
+                </div>
+            </div>
+        </section>
+        
+
+        <section id="contact">
+            <h2 style="display: flex; justify-content: center; font-size: 50px; font-family: Verdana, Geneva, Tahoma, sans-serif;">Contact Me</h2>
+            <form id="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 | All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    alert('Message sent! Thank you for contacting me.');
+});
+    </script>
+</body>
+</html>
